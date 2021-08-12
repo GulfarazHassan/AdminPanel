@@ -10,6 +10,7 @@ import {
   TextField,
   Menu,
   MenuItem,
+  ButtonBase,
 } from "@material-ui/core";
 import React, { useState } from "react";
 import { useStyles } from "./LayoutElements";
@@ -28,11 +29,13 @@ import { IoMdHelpBuoy } from "react-icons/io";
 import { IoChatbubblesSharp } from "react-icons/io5";
 import logo from "../../assets/Images/logo.png";
 
-const Layout = ({ ...props }) => {
-  const classes = useStyles(props);
+const Layout = ({ children, ...props }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [isOpened, setIsOpened] = useState(false);
 
+  // props.isOpened = isOpened;
+  // const classes = useStyles(props);
+  const classes = useStyles({ isOpened: isOpened });
   const _handleClick = () => {
     setIsOpened(!isOpened);
   };
@@ -48,13 +51,13 @@ const Layout = ({ ...props }) => {
   return (
     <div className={classes.root}>
       {/* app bar */}{" "}
-      <AppBar
-        className={classes.appbar}
-        elevation={2}
-        color={"inherit"}
-        isOpened={isOpened}>
+      <AppBar className={classes.appbar} elevation={2} color={"inherit"}>
         <Toolbar className={classes.toolbar}>
-          {<MenuOutlined onClick={_handleClick} className={classes.menuIcon} />}
+          <div>
+            <IconButton onClick={_handleClick}>
+              <MenuOutlined />
+            </IconButton>
+          </div>
           <TextField
             className={classes.searchText}
             InputProps={{
@@ -132,7 +135,7 @@ const Layout = ({ ...props }) => {
         </Toolbar>
       </AppBar>
       {/* sidebar */}
-      {isOpened ? (
+      {isOpened && (
         <Drawer
           className={classes.drawer}
           variant='permanent'
@@ -172,7 +175,11 @@ const Layout = ({ ...props }) => {
             ))}
           </List>
         </Drawer>
-      ) : null}
+      )}
+      <div className={classes.page}>
+        <div className={classes.toolbar} />
+        {children}
+      </div>
     </div>
   );
 };

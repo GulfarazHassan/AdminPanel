@@ -25,7 +25,7 @@ function Copyright() {
     </Typography>
   );
 }
-const SignIn = () => {
+const SignIn = ({ onLogin }) => {
   const classes = useStyles();
   const globalClass = globalStyles();
   const [isChecked, setIsChecked] = useState(false);
@@ -80,7 +80,10 @@ const SignIn = () => {
                 </Typography>
               </div>
               <div className={classes.btnWrapper}>
-                <Button variant={"contained"} className={classes.login}>
+                <Button
+                  variant={"contained"}
+                  className={classes.login}
+                  onClick={onLogin}>
                   Login
                 </Button>
                 <Button variant={"outlined"} className={classes.signUp}>

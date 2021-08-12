@@ -7,21 +7,26 @@ export const useStyles = makeStyles((theme, props) => ({
   root: {
     display: "flex",
   },
+  page: {
+    background: COLORS.light_grey,
+    width: "100%",
+    padding: theme.spacing(3),
+  },
+  // necessary
+  toolbar: theme.mixins.toolbar,
   menuIcon: {
     color: COLORS.dark_grey,
   },
   appbar: {
-    // width: `calc(100% - ${drawerWidth}px)`,
-    width: (props) =>
-      props.isOpened ? `calc(100% - ${drawerWidth}px)` : `100%`,
-    // [theme.breakpoints.down("sm")]: {
-    //   width: "100%",
-    // },
+    width: ({ isOpened }) =>
+      isOpened ? `calc(100% - ${drawerWidth}px)` : `100%`,
+    [theme.breakpoints.down("sm")]: {
+      width: `calc(100% + ${drawerWidth}px)`,
+      display: ({ isOpened }) => isOpened && "none",
+    },
     boxShadow: `1px 0px 10px ${COLORS.grey}`,
   },
-  toolbar: {
-    padding: theme.spacing(0, 1),
-  },
+
   searchText: {
     flexGrow: 1,
   },
@@ -68,14 +73,11 @@ export const useStyles = makeStyles((theme, props) => ({
   },
   drawer: {
     width: drawerWidth,
-    [theme.breakpoints.down("sm")]: {
-      display: "none",
-    },
   },
   drawerPaper: {
     width: drawerWidth,
     [theme.breakpoints.down("sm")]: {
-      display: "none",
+      display: ({ isOpened }) => isOpened && "flex",
     },
   },
   active: {

@@ -1,22 +1,16 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "./App.css";
-import Layout from "./components/Layout/index";
-import SignInScreen from "./screens/AuthScreens/SignInScreen";
+import Layout from "./pages/Layout/index";
+import HomeScreen from "./screens/HomeSreens/HomeScreen";
 function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Layout />
-
-        <Route path='/'>
-          <SignInScreen />
-        </Route>
-        <Route path='/'>
-          <SignInScreen />
-        </Route>
-        <Route path='/SignIn'>
-          <SignInScreen />
-        </Route>
+        <Layout>
+          <Route exact path='/'>
+            <HomeScreen />
+          </Route>
+        </Layout>
       </Switch>
     </BrowserRouter>
   );

@@ -8,4 +8,12 @@ export const COLORS = {
   grey: "#BCBCCB",
   light_grey: "#F1F1F3",
   yellow: "#FECB2E",
+  purple: "#A3A1FB",
+  green: "#5EE2A0",
+  orange: "#FFA167",
+  pink: "#FF7CC3",
+  sky: "#81C9FF",
+  light_red: "#FF8474",
+  red: "#FF4141",
+  skin: "#FFCA83",
 };
