@@ -12,6 +12,7 @@ import {
 } from "@material-ui/core";
 import Product from "../../assets/Images/Product.png";
 import { useStyles } from "./styles/DashboardElements";
+import { COLORS } from "../../res/Colors";
 function createData(PRODUCT, AVAILABILITY, TOTAL) {
   return { PRODUCT, AVAILABILITY, TOTAL };
 }
@@ -28,11 +29,7 @@ const heading = [];
 const TopProduct = () => {
   const classes = useStyles();
   return (
-    <Paper
-      elevation={0}
-      variant='outlined'
-      square
-      className={classes.tableContainer}>
+    <Paper elevation={0} variant='outlined' square className={classes.paper}>
       <Typography className={classes.title}>Top Products</Typography>
       <TableContainer>
         <Table aria-label='simple table'>
@@ -72,6 +69,9 @@ const TopProduct = () => {
           </TableBody>
         </Table>
       </TableContainer>
+      <div className={classes.showMore}>
+        <Button className={classes.showMoreText}>Show More</Button>
+      </div>
     </Paper>
   );
 };

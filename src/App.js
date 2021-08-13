@@ -1,14 +1,16 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Layout from "./pages/Layout/index";
-import HomeScreen from "./screens/HomeSreens/HomeScreen";
+import Dashboard from "./screens/HomeSreens/Dashboard/index";
+import Plans from "./screens/HomeSreens/Plans";
 function App() {
   return (
     <BrowserRouter>
       <Switch>
         <Layout>
           <Route exact path='/'>
-            <HomeScreen />
+            {/* <Dashboard /> */}
+            <Plans />
           </Route>
         </Layout>
       </Switch>

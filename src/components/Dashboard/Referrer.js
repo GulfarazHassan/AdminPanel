@@ -8,6 +8,7 @@ import {
   TableRow,
   Paper,
   Typography,
+  Button,
 } from "@material-ui/core";
 import { useStyles } from "./styles/DashboardElements";
 
@@ -26,11 +27,7 @@ const rows = [
 const Referrer = () => {
   const classes = useStyles();
   return (
-    <Paper
-      elevation={0}
-      variant='outlined'
-      square
-      className={classes.tableContainer}>
+    <Paper elevation={0} variant='outlined' square className={classes.paper}>
       <Typography className={classes.title}>Referrer</Typography>
       <TableContainer>
         <Table className={classes.table} aria-label='simple table'>
@@ -77,6 +74,9 @@ const Referrer = () => {
           </TableBody>
         </Table>
       </TableContainer>
+      <div className={classes.showMore}>
+        <Button className={classes.showMoreText}>Show More</Button>
+      </div>
     </Paper>
   );
 };

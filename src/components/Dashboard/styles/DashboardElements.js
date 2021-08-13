@@ -4,8 +4,26 @@ import { COLORS } from "../../../res/Colors";
 export const useStyles = makeStyles((theme, props) => ({
   // ***************common*****
   title: {
-    padding: theme.spacing(2, 0),
+    padding: theme.spacing(1.2, 0),
     color: COLORS.primary,
+  },
+  paper: {
+    margin: theme.spacing(1, 0),
+    padding: theme.spacing(2),
+    backgroundColor: COLORS.white,
+    height: "28rem",
+  },
+  showMore: {
+    height: "3rem",
+    // border: "1px solid #ccc",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  showMoreText: {
+    fontSize: 12,
+    color: COLORS.yellow,
+    textTransform: "none",
   },
   // ***************graphCardStyle****************
   cardWrapper: {
@@ -49,11 +67,6 @@ export const useStyles = makeStyles((theme, props) => ({
 
   // ****************Referrer***********************
 
-  tableContainer: {
-    margin: theme.spacing(1, 0),
-    padding: "12px",
-    backgroundColor: COLORS.white,
-  },
   tableRow: {
     backgroundColor: COLORS.light_grey,
   },
@@ -76,14 +89,14 @@ export const useStyles = makeStyles((theme, props) => ({
     padding: 0,
   },
   media: {
-    height: 120,
+    height: 140,
     padding: theme.spacing(1, 0),
     borderBottomWidth: 1,
     borderBottomColor: COLORS.light_grey,
     borderBottomStyle: "solid",
   },
   list: {
-    padding: theme.spacing(0.5, 0),
+    padding: theme.spacing(0.55, 0),
     margin: 0,
   },
 
@@ -93,7 +106,7 @@ export const useStyles = makeStyles((theme, props) => ({
     opacity: 0.4,
     fontSize: "0.6rem",
     width: "6rem",
-    padding: theme.spacing(1, 1.2),
+    padding: theme.spacing(0.6, 1),
     borderRadius: "10rem",
   },
   product: {

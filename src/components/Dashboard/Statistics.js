@@ -71,11 +71,7 @@ const Statistics = () => {
   });
 
   return (
-    <Paper
-      elevation={0}
-      variant='outlined'
-      square
-      className={classes.tableContainer}>
+    <Paper elevation={0} variant='outlined' square className={classes.paper}>
       <div className={classes.statsHeader}>
         <Typography>Statistics</Typography>
         <FormControl variant='outlined' className={classes.formControl}>

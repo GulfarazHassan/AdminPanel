@@ -12,35 +12,36 @@ import {
 import person from "../../assets/Images/person.png";
 import { COLORS } from "../../res/Colors";
 import { useStyles } from "./styles/DashboardElements";
+import { quickDetail } from "../../res/Constants";
 
 const QuickDetail = () => {
   const classes = useStyles();
   return (
-    <Paper
-      elevation={0}
-      variant='outlined'
-      square
-      className={classes.tableContainer}>
+    <Paper elevation={0} variant='outlined' square className={classes.paper}>
       <List dense>
         <ListItemText className={classes.quickHeader}>
           <Typography style={{ color: COLORS.primary }}>
             Quick Details
           </Typography>
         </ListItemText>
-        <ListItem className={classes.quickContent}>
-          <ListItemAvatar>
-            <Avatar src={person} />
-          </ListItemAvatar>
-          <ListItemText
-            style={{ color: COLORS.primary }}
-            primary={`290 New Customers`}
-          />
-          <ListItemSecondaryAction>
-            <Typography style={{ color: COLORS.grey, fontSize: 12 }}>
-              Last 24 Hours
-            </Typography>
-          </ListItemSecondaryAction>
-        </ListItem>
+        {quickDetail.map((item) => {
+          return (
+            <ListItem className={classes.quickContent}>
+              <ListItemAvatar>
+                <Avatar src={item.img} />
+              </ListItemAvatar>
+              <ListItemText
+                style={{ color: COLORS.primary }}
+                primary={item.title}
+              />
+              <ListItemSecondaryAction>
+                <Typography style={{ color: COLORS.grey, fontSize: 12 }}>
+                  {item.text}
+                </Typography>
+              </ListItemSecondaryAction>
+            </ListItem>
+          );
+        })}
       </List>
     </Paper>
   );

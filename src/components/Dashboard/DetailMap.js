@@ -20,11 +20,7 @@ import { useStyles } from "./styles/DashboardElements";
 export default function DetailMap() {
   const classes = useStyles();
   return (
-    <Paper
-      elevation={0}
-      variant='outlined'
-      square
-      className={classes.tableContainer}>
+    <Paper elevation={0} variant='outlined' square className={classes.paper}>
       <Card elevation={0}>
         <CardContent className={classes.cardHeader}>
           <Typography variant='body2'>Details on Map</Typography>

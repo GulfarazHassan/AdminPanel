@@ -16,4 +16,5 @@ export const COLORS = {
   light_red: "#FF8474",
   red: "#FF4141",
   skin: "#FFCA83",
+  dark_orange: "#FF6565",
 };
